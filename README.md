@@ -1,5 +1,7 @@
 # Service Fabric Linux Container Sample
 
+Build and push [the container image](my_app/my_service_pkg/code/Dockerfile) to a container registry before installing the SF app.
+
 Install and uninstall the sample app to a local dev cluster by `install.sh` and `uninstall.sh` separately.
 
 See
