@@ -14,7 +14,7 @@
     <ConfigOverrides />
     <Policies>
       <ContainerHostPolicies CodePackageRef="code">
-        <!-- RepositoryCredentials AccountName="myregistry" Password="=P==/==/=8=/=+u4lyOB=+=nWzEeRfF=" PasswordEncrypted="false"/ -->
+        <RepositoryCredentials AccountName="[Your Account]" Password="[Your Password]" PasswordEncrypted="false"/>
         <PortBinding ContainerPort="80" EndpointRef="myServiceTypeEndpoint"/>
       </ContainerHostPolicies>
     </Policies>

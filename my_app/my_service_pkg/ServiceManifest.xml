@@ -19,8 +19,7 @@
   <CodePackage Name="code" Version="1.0.0">
     <EntryPoint>
       <ContainerHost>
-        <!-- ImageName>myregistry.azurecr.io/samples/helloworldapp</ImageName -->
-        <ImageName>helloworldapp</ImageName>
+        <ImageName>docker.io/louirobert/helloworldapp</ImageName>
         <!-- Pass comma delimited commands to your container: dotnet, myproc.dll, 5" -->
         <!--Commands> dotnet, myproc.dll, 5 </Commands-->
         <Commands></Commands>
