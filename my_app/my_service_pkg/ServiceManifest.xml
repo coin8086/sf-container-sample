@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The Name attribute of the ServiceManifest element must match the directory name
+     containing the ServiceManifest.xml file. -->
+<ServiceManifest
+  Name="my_service_pkg"
+  Version="1.0.0"
+  xmlns="http://schemas.microsoft.com/2011/01/fabric"
+  xmlns:xsd="https://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance">
+
+  <ServiceTypes>
+    <!-- This is the name of your ServiceType.
+         The UseImplicitHost attribute indicates this is a guest service. -->
+    <StatelessServiceType ServiceTypeName="myserviceType" UseImplicitHost="true" />
+  </ServiceTypes>
+
+  <!-- Code package is your service executable.
+    The Name attribute must match the directory name containing the executable. -->
+  <CodePackage Name="code" Version="1.0.0">
+    <EntryPoint>
+      <ContainerHost>
+        <!-- ImageName>myregistry.azurecr.io/samples/helloworldapp</ImageName -->
+        <ImageName>helloworldapp</ImageName>
+        <!-- Pass comma delimited commands to your container: dotnet, myproc.dll, 5" -->
+        <!--Commands> dotnet, myproc.dll, 5 </Commands-->
+        <Commands></Commands>
+      </ContainerHost>
+    </EntryPoint>
+
+    <!-- Pass environment variables to your container: -->
+    <EnvironmentVariables>
+      <!--
+      <EnvironmentVariable Name="VariableName" Value="VariableValue"/>
+      -->
+    </EnvironmentVariables>
+
+  </CodePackage>
+
+  <Resources>
+    <Endpoints>
+      <!-- This endpoint is used by the communication listener to obtain the port on which to
+           listen. Please note that if your service is partitioned, this port is shared with
+           replicas of different partitions that are placed in your code. -->
+      <Endpoint Name="myServiceTypeEndpoint" UriScheme="http" Port="4000" Protocol="http"/>
+    </Endpoints>
+  </Resources>
+</ServiceManifest>
